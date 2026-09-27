@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b12">
+<meta name="description" content="Akbar Cyber Hub - Online and digital service assistance, form filling, certificates, documents, photo services and more.">
+<title>Akbar Cyber Hub | Online & Digital Services</title>
+<style>
+:root{--blue:#08a8ff;--cyan:#22e7ff;--violet:#7a5cff;--ink:#080b11;--dark:#070b12;--dark2:#0d131d;--white:#fff;--muted:#9ca9b8;--line:rgba(255,255,255,.11);--wa:#25d366;--shadow:0 25px 80px rgba(0,0,0,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#fff;color:#0a1522;line-height:1.6;overflow-x:hidden;overflow-y:auto;min-height:100vh}
+a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}
+.container{width:min(1180px,92%);margin-inline:auto}
+/* animated background / water-like blobs */
+.page-glow{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.16;animation:water 12s ease-in-out infinite alternate}
+.blob.one{width:360px;height:360px;background:var(--cyan);left:-120px;top:12%}.blob.two{width:420px;height:420px;background:var(--violet);right:-150px;top:42%;animation-delay:2s}.blob.three{width:300px;height:300px;background:var(--blue);left:40%;bottom:-150px;animation-delay:4s}
+@keyframes water{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(50px,-30px,0) scale(1.12)}100%{transform:translate3d(-30px,50px,0) scale(.94)}}
+/* header */
+.topline{background:#060a10;color:#c7d0dc;text-align:center;font-size:12px;padding:8px 15px;letter-spacing:.3px}.topline b{color:#fff}
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);border-bottom:1px solid #e8edf3;box-shadow:0 8px 30px rgba(10,30,60,.06)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px}.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;box-shadow:0 8px 22px rgba(0,90,170,.16)}.brand strong{font-size:17px;letter-spacing:.2px}.brand small{display:block;color:#708096;font-size:10px;letter-spacing:1px;text-transform:uppercase}.navlinks{display:flex;align-items:center;gap:5px}.navlinks a{padding:10px 12px;border-radius:9px;font-size:13px;font-weight:750;color:#354457;transition:.25s}.navlinks a:hover{background:#edf8ff;color:#0577c7}.navlinks .navcta{background:#07101a;color:#fff}
+/* hero */
+.hero{position:relative;padding:90px 0 80px;display:grid;grid-template-columns:1.03fr .97fr;gap:55px;align-items:center;min-height:680px}.hero:after{content:"";position:absolute;left:50%;bottom:0;width:180%;height:90px;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(8,168,255,.18),transparent 64%);filter:blur(15px);pointer-events:none}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid #d9e9f5;background:#f7fcff;border-radius:999px;padding:7px 12px;color:#0879c5;font-weight:850;font-size:11px;letter-spacing:1.2px}.dot{width:7px;height:7px;border-radius:50%;background:#18b96a;box-shadow:0 0 0 6px #18b96a18;animation:pulse 2s infinite}@keyframes pulse{70%{box-shadow:0 0 0 11px transparent}}
+.hero h1{font-size:clamp(45px,6vw,78px);line-height:1.01;letter-spacing:-4px;margin:19px 0}.hero h1 .gradient{background:linear-gradient(90deg,#058bdb,#0bc8e8,#7658ff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:17px;color:#617084;max-width:690px;margin-bottom:28px}.actions{display:flex;flex-wrap:wrap;gap:11px}.btn{min-height:48px;padding:0 19px;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:850;border:1px solid #dce5ee;cursor:pointer;transition:.25s}.btn:hover{transform:translateY(-3px)}.primary{background:#070d15;color:#fff;border-color:#070d15;box-shadow:0 12px 28px rgba(0,0,0,.18)}.blue{background:linear-gradient(135deg,#08a8ff,#685cff);color:#fff;border:0;box-shadow:0 13px 30px rgba(8,130,220,.22)}.wa{background:var(--wa);color:#04140a;border:0}.outline{background:#fff;color:#172538}
+.hero-note{margin-top:25px;font-size:11px;color:#7a8797;display:flex;gap:8px;align-items:flex-start}.hero-note span{color:#0c85c8;font-size:15px}
+.hero-visual{position:relative;min-height:500px;border-radius:32px;background:linear-gradient(145deg,#07101b,#111b29);overflow:hidden;box-shadow:0 35px 90px rgba(4,14,27,.28)}.hero-visual:before,.hero-visual:after{content:"";position:absolute;border-radius:50%;filter:blur(20px);animation:water 9s ease-in-out infinite alternate}.hero-visual:before{width:260px;height:260px;background:#09c8ff55;right:-60px;top:-50px}.hero-visual:after{width:280px;height:280px;background:#7c5cff55;left:-100px;bottom:-100px;animation-delay:2s}.logo-card{position:absolute;left:10%;right:10%;top:10%;bottom:10%;border:1px solid #ffffff18;background:linear-gradient(145deg,#ffffff0d,#ffffff03);border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:25px;backdrop-filter:blur(14px)}.logo-card img{width:min(320px,78%);border-radius:50%;box-shadow:0 0 70px rgba(20,190,255,.18)}.status-row{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%}.status{border:1px solid #ffffff12;background:#ffffff08;border-radius:12px;padding:11px 7px;text-align:center;color:#b8c6d4;font-size:10px}.status b{display:block;color:#fff;font-size:13px}
+/* wave divider */
+.wave{height:90px;position:relative;overflow:hidden;margin-top:-1px}.wave:before,.wave:after{content:"";position:absolute;left:-10%;width:120%;height:100px;border-radius:50% 50% 0 0/100% 100% 0 0}.wave:before{bottom:-70px;background:#070b12}.wave:after{bottom:-82px;background:#fff;opacity:.95}
+/* white sections */
+.section{padding:95px 0}.section-head{max-width:760px;margin-bottom:38px}.section-head.center{text-align:center;margin-inline:auto}.kicker{color:#0788d5;text-transform:uppercase;font-weight:900;letter-spacing:2px;font-size:11px}.section h2{font-size:clamp(31px,4vw,46px);line-height:1.05;letter-spacing:-2px;margin:9px 0 12px;color:#091523}.section-head p{color:#708095}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.service{position:relative;padding:24px;border:1px solid #e1e8ef;border-radius:19px;background:rgba(255,255,255,.92);box-shadow:0 8px 30px rgba(12,38,65,.04);transition:.35s;overflow:hidden}.service:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--blue),var(--violet));transform:scaleX(0);transform-origin:left;transition:.35s}.service:hover{transform:translateY(-7px);box-shadow:0 20px 45px rgba(12,38,65,.1);border-color:#cfe4f2}.service:hover:before{transform:scaleX(1)}.service-icon{width:49px;height:49px;border-radius:14px;background:#eff9ff;display:grid;place-items:center;font-size:23px;margin-bottom:14px}.service h3{font-size:16px;color:#132a42;margin-bottom:6px}.service p{font-size:12px;color:#748298}.service .arrow{position:absolute;right:19px;bottom:18px;color:#078bd8;font-weight:900}
+/* dark showcase */
+.dark-section{position:relative;background:#070b12;color:#fff;overflow:hidden}.dark-section:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:#0aaeff10;filter:blur(30px);right:-180px;top:-170px}.dark-section .section-head p{color:#93a2b4}.dark-section h2{color:#fff}.dark-section .kicker{color:#25dfff}.process{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.process-card{position:relative;padding:25px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#101a28,#0a1019);overflow:hidden;transition:.3s}.process-card:hover{transform:translateY(-6px);border-color:#20d8ff55}.process-number{font-size:12px;color:#24ddff;font-weight:900;letter-spacing:1px}.process-card h3{font-size:17px;margin:30px 0 7px}.process-card p{font-size:12px;color:#8f9eb0}.process-line{position:absolute;top:25px;right:20px;width:50px;height:1px;background:linear-gradient(90deg,#24ddff,transparent)}
+/* booking */
+.booking-section{background:linear-gradient(#fff,#f4f9fd)}.booking{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start}.booking-info{padding:32px;border-radius:25px;background:#080d14;color:#fff;position:relative;overflow:hidden}.booking-info:before{content:"";position:absolute;width:230px;height:230px;background:#08baff2b;border-radius:50%;filter:blur(45px);right:-80px;top:-80px}.booking-info h3{font-size:28px;line-height:1.1;margin-bottom:11px;position:relative}.booking-info p{color:#9baabc;font-size:13px;position:relative}.contact-points{display:grid;gap:10px;margin-top:25px;position:relative}.contact-point{border:1px solid #ffffff12;border-radius:13px;padding:13px;color:#cbd6e1;font-size:12px}.contact-point b{display:block;color:#fff;font-size:14px;margin-bottom:2px}.form-panel{background:#fff;border:1px solid #dfe8f0;border-radius:25px;padding:30px;box-shadow:0 20px 55px rgba(15,45,75,.08)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:850;color:#31465c}.field input,.field select,.field textarea{width:100%;border:1px solid #d3dee8;border-radius:11px;padding:13px 14px;background:#fbfdff;color:#1a2b3d;outline:none;transition:.2s}.field textarea{min-height:115px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:#079ee5;box-shadow:0 0 0 4px #079ee510;background:#fff}.submit{width:100%;margin-top:16px}.form-note{font-size:10px;color:#7b8998;text-align:center;margin-top:9px}
+/* contact / footer */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.contact-card{padding:28px;border:1px solid #dfe7ef;border-radius:20px;background:#fff}.contact-card.dark{background:#080d14;color:#fff;border-color:#080d14}.contact-card h3{font-size:20px;margin-bottom:7px}.contact-card p{color:#748298;font-size:13px;margin-bottom:16px}.contact-card.dark p{color:#9aa9ba}.phone{font-size:23px;font-weight:900;color:#0788d5;margin-bottom:17px}.dark .phone{color:#27dfff}
+.disclaimer{background:#fff8e8;border-block:1px solid #f0dfb7;padding:18px;text-align:center;color:#765b21;font-size:11px}.disclaimer b{color:#604714}footer{background:#05080d;color:#7e8b9b;padding:30px 0;font-size:11px}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-brand{color:#fff;font-weight:900;font-size:15px}.float-wa{position:fixed;right:20px;bottom:20px;z-index:150;background:var(--wa);color:#04140a;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:25px;box-shadow:0 16px 35px #0004;animation:float 3s ease-in-out infinite}@keyframes float{50%{transform:translateY(-7px)}}
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}.reveal.show{opacity:1;transform:none}.service.reveal:nth-child(3n+2){transition-delay:.07s}.service.reveal:nth-child(3n+3){transition-delay:.14s}
+@media(max-width:900px){.navlinks{display:none}.hero{grid-template-columns:1fr;min-height:auto;padding-top:65px}.hero-visual{min-height:440px}.service-grid{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}.booking{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.nav{height:68px}.brand img{width:42px;height:42px}.brand strong{font-size:15px}.hero{padding:48px 0 55px}.hero h1{font-size:44px;letter-spacing:-2.5px}.hero p{font-size:14px}.actions{flex-direction:column}.actions .btn{width:100%}.hero-visual{min-height:370px}.logo-card{left:6%;right:6%;top:7%;bottom:7%}.status-row{grid-template-columns:1fr 1fr}.status:last-child{grid-column:1/-1}.section{padding:65px 0}.service-grid,.process{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.form-panel,.booking-info{padding:22px}.footer-row{flex-direction:column;text-align:center}.float-wa{right:15px;bottom:15px;width:53px;height:53px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page-glow"><div class="blob one"></div><div class="blob two"></div><div class="blob three"></div></div>
+
+<div class="topline"><b>AKBAR CYBER HUB</b> &nbsp;•&nbsp; Online & Digital Services &nbsp;•&nbsp; Form Filling &nbsp;•&nbsp; Document Assistance</div>
+<header><div class="container nav">
+<a class="brand" href="#home"><img src="akbar-cyber-hub.png" alt="Akbar Cyber Hub logo"><span><strong>Akbar Cyber Hub</strong><small>Online & Digital Services</small></span></a>
+<nav class="navlinks"><a href="#home">Home</a><a href="#services">Services</a><a href="#process">How It Works</a><a href="#appointment">Appointment</a><a class="navcta" href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="home">
+<section class="container hero">
+<div class="reveal">
+<span class="eyebrow"><i class="dot"></i> DIGITAL SERVICE CENTER</span>
+<h1>Everything You Need.<br><span class="gradient">In One Place.</span></h1>
+<p>Professional assistance for online forms, certificates, identity-document services, land & revenue work, LPG services, photo & document preparation, printing and other digital tasks.</p>
+<div class="actions"><a class="btn blue" href="#services">Explore Services →</a><a class="btn primary" href="#appointment">Book Appointment</a><a class="btn wa" target="_blank" rel="noopener" href="https://wa.me/919341795086?text=Hello%20Akbar%20Cyber%20Hub%2C%20I%20need%20help%20with%20an%20online%20service.">WhatsApp</a></div>
+<div class="hero-note"><span>✦</span><div>Independent digital assistance service. Government applications and approvals remain subject to the rules and verification of the relevant official department/portal.</div></div>
+</div>
+<div class="hero-visual reveal"><div class="logo-card"><img src="akbar-cyber-hub.png" alt="Akbar Cyber Hub"><div class="status-row"><div class="status"><b>ONLINE</b>Service Assistance</div><div class="status"><b>FAST</b>Form Support</div><div class="status"><b>EASY</b>Digital Help</div></div></div></div>
+</section>
+<div class="wave"></div>
+
+<section id="services" class="section"><div class="container">
+<div class="section-head center reveal"><div class="kicker">Service Menu</div><h2>Professional Digital Assistance</h2><p>Tap any service to jump directly to the appointment form with that service selected.</p></div>
+<div class="service-grid">
+<div class="service reveal" onclick="selectService('Aadhaar Services')"><div class="service-icon">🪪</div><h3>Aadhaar Services</h3><p>Aadhaar-related online assistance, downloads, updates and available digital processes.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('PAN Card')"><div class="service-icon">💳</div><h3>PAN Card</h3><p>PAN application, correction and related online form assistance.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('Voter ID / EPIC')"><div class="service-icon">🗳️</div><h3>Voter ID / EPIC</h3><p>Voter registration, correction, e-EPIC and application assistance.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('Land & Revenue')"><div class="service-icon">🌐</div><h3>Land & Revenue</h3><p>Land-related online records, revenue/lagan receipt and available portal assistance.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('Caste Certificate')"><div class="service-icon">📜</div><h3>Caste Certificate</h3><p>Online application and document assistance for eligible applicants.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('Residence Certificate')"><div class="service-icon">🏠</div><h3>Residence Certificate</h3><p>Residence certificate application, document upload and status assistance.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('Income Certificate')"><div class="service-icon">💰</div><h3>Income Certificate</h3><p>Income certificate online application and document preparation assistance.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('NCL / EWS Certificate')"><div class="service-icon">📑</div><h3>NCL / EWS Certificate</h3><p>Application assistance subject to eligibility and official portal requirements.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('Ayushman Card')"><div class="service-icon">🏥</div><h3>Ayushman Card</h3><p>Eligible-user assistance for available Ayushman online processes.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('LPG KYC / Booking')"><div class="service-icon">🔥</div><h3>LPG KYC / Booking</h3><p>Assistance with available LPG KYC and booking/order processes.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('APAAR ID')"><div class="service-icon">🎓</div><h3>APAAR ID</h3><p>APAAR-related assistance where required verification is completed by the user.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('Online Form Filling')"><div class="service-icon">📝</div><h3>Online Form Filling</h3><p>Recruitment, exam, admission, scholarship and other online application forms.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('Exam / Admission Form')"><div class="service-icon">🎯</div><h3>Exam / Admission Forms</h3><p>Application assistance for exams and admissions according to official schedules.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('Scholarship Application')"><div class="service-icon">🎓</div><h3>Scholarship Application</h3><p>Online scholarship application and document-upload assistance.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('Photo / Passport Photo')"><div class="service-icon">📸</div><h3>Photo / Passport Photo</h3><p>Passport-size photos, resize, crop and document-ready image preparation.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('Photo & Design')"><div class="service-icon">🖼️</div><h3>Photo & Design</h3><p>Basic photo editing, creative designs and social-media graphics.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('Print / Scan / Xerox')"><div class="service-icon">🖨️</div><h3>Print / Scan / Xerox</h3><p>Printing, scanning, photocopying and digital document preparation.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('Document Resize / Upload')"><div class="service-icon">📤</div><h3>Document Resize / Upload</h3><p>PDF/image resize, compression, format conversion and upload assistance.</p><span class="arrow">↗</span></div>
+<div class="service reveal" onclick="selectService('Other Digital Service')"><div class="service-icon">⚡</div><h3>Other Digital Services</h3><p>Tell us what you need and we can check whether the task is available.</p><span class="arrow">↗</span></div>
+</div></div></section>
+
+<section id="process" class="dark-section"><div class="container section">
+<div class="section-head reveal"><div class="kicker">Simple Workflow</div><h2>From Request to Assistance.</h2><p>One clean process, designed to work smoothly on both phone and laptop.</p></div>
+<div class="process">
+<div class="process-card reveal"><div class="process-number">01 / SELECT</div><div class="process-line"></div><h3>Choose a Service</h3><p>Select the service you need from the menu.</p></div>
+<div class="process-card reveal"><div class="process-number">02 / BOOK</div><div class="process-line"></div><h3>Book Appointment</h3><p>Enter your name, phone, service and preferred date.</p></div>
+<div class="process-card reveal"><div class="process-number">03 / SEND</div><div class="process-line"></div><h3>Open WhatsApp</h3><p>Your formatted request opens directly in WhatsApp.</p></div>
+<div class="process-card reveal"><div class="process-number">04 / CONFIRM</div><div class="process-line"></div><h3>Get Assistance</h3><p>Connect with Akbar Cyber Hub for next steps.</p></div>
+</div></div></section>
+
+<section id="appointment" class="section booking-section"><div class="container">
+<div class="section-head center reveal"><div class="kicker">Appointment</div><h2>Tell Us What You Need.</h2><p>Fill the form below. It opens a ready-to-send WhatsApp message—no server database is used by this page.</p></div>
+<div class="booking">
+<div class="booking-info reveal"><h3>Akbar Cyber Hub</h3><p>Online & digital service assistance for forms, documents, certificates, photo work and more.</p><div class="contact-points"><div class="contact-point"><b>📞 9341 795086</b>Call / WhatsApp</div><div class="contact-point"><b>⚡ Quick Request</b>Your details are formatted automatically.</div><div class="contact-point"><b>🔐 Stay Safe</b>Never share OTP, UPI PIN, password or bank credentials.</div></div></div>
+<div class="form-panel reveal"><form id="bookingForm"><div class="form-grid">
+<div class="field"><label>Full Name *</label><input id="name" required placeholder="Enter your full name"></div>
+<div class="field"><label>Phone Number *</label><input id="phone" required inputmode="numeric" pattern="[0-9]{10}" placeholder="10-digit mobile number"></div>
+<div class="field full"><label>Service *</label><select id="service" required><option value="">Select a service</option><option>Aadhaar Services</option><option>PAN Card</option><option>Voter ID / EPIC</option><option>Land & Revenue</option><option>Caste Certificate</option><option>Residence Certificate</option><option>Income Certificate</option><option>NCL / EWS Certificate</option><option>Ayushman Card</option><option>LPG KYC / Booking</option><option>APAAR ID</option><option>Online Form Filling</option><option>Exam / Admission Form</option><option>Scholarship Application</option><option>Photo / Passport Photo</option><option>Photo & Design</option><option>Print / Scan / Xerox</option><option>Document Resize / Upload</option><option>Other Digital Service</option></select></div>
+<div class="field"><label>Preferred Date *</label><input id="date" type="date" required></div>
+<div class="field"><label>Preferred Time</label><input id="time" type="time"></div>
+<div class="field full"><label>Additional Details</label><textarea id="note" placeholder="Briefly describe what you need..."></textarea></div>
+</div><button class="btn blue submit" type="submit">💬 Send Request on WhatsApp</button><div class="form-note">WhatsApp will open with the details. Final confirmation is done directly by Akbar Cyber Hub.</div></form></div>
+</div></div></section>
+
+<section id="contact" class="section"><div class="container"><div class="section-head reveal"><div class="kicker">Contact</div><h2>Let's Connect.</h2><p>For service availability, document requirements or appointment confirmation.</p></div><div class="contact-grid"><div class="contact-card dark reveal"><h3>WhatsApp Support</h3><p>Send a quick message and discuss the service you need.</p><div class="phone">9341 795086</div><a class="btn wa" target="_blank" rel="noopener" href="https://wa.me/919341795086?text=Hello%20Akbar%20Cyber%20Hub%2C%20I%20want%20to%20know%20about%20your%20services.">Open WhatsApp →</a></div><div class="contact-card reveal"><h3>Phone Support</h3><p>Call Akbar Cyber Hub for general service information.</p><div class="phone">+91 93417 95086</div><a class="btn outline" href="tel:+919341795086">Call Now →</a></div></div></div></section>
+</main>
+
+<div class="disclaimer"><b>Important:</b> Akbar Cyber Hub is an independent online and digital assistance service. This website is not an official Government of India or Government of Bihar website and is not affiliated with any government department. Official approvals, eligibility and verification remain with the relevant authority.</div>
+<footer><div class="container footer-row"><div class="footer-brand">AKBAR CYBER HUB</div><div>© <span id="year"></span> Akbar Cyber Hub • Online & Digital Services</div></div></footer>
+<a class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp" href="https://wa.me/919341795086?text=Hello%20Akbar%20Cyber%20Hub%2C%20I%20need%20help.">💬</a>
+
+<script>
+const today=new Date().toISOString().split('T')[0];
+document.getElementById('date').min=today;
+document.getElementById('year').textContent=new Date().getFullYear();
+function selectService(name){const s=document.getElementById('service');s.value=name;document.getElementById('appointment').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>document.getElementById('name').focus(),550)}
+document.getElementById('bookingForm').addEventListener('submit',function(e){e.preventDefault();const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),service=document.getElementById('service').value,date=document.getElementById('date').value,time=document.getElementById('time').value||'Not specified',note=document.getElementById('note').value.trim()||'None';if(!/^[0-9]{10}$/.test(phone)){alert('Please enter a valid 10-digit phone number.');return}const msg=`*AKBAR CYBER HUB - APPOINTMENT REQUEST*\n\nName: ${name}\nPhone: ${phone}\nService: ${service}\nPreferred Date: ${date}\nPreferred Time: ${time}\nAdditional Details: ${note}\n\nPlease contact me regarding this service.`;window.open('https://wa.me/919341795086?text='+encodeURIComponent(msg),'_blank','noopener')});
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
