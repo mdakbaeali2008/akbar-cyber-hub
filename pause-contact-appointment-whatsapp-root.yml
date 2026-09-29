@@ -1,0 +1,171 @@
+name: Pause Contact Appointment and WhatsApp
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "index.html"
+
+permissions:
+  contents: write
+
+jobs:
+  pause:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Inject pause controls
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path("index.html")
+          html = path.read_text(encoding="utf-8")
+          marker = "<!-- AKBAR_PAUSE_CONTACT_APPOINTMENT_V2 -->"
+          if marker in html:
+              print("Pause code already present.")
+              raise SystemExit(0)
+
+          css = r"""
+<style id="akbar-pause-styles">
+/* AKBAR_PAUSE_CONTACT_APPOINTMENT_V2 */
+.akbar-paused-control {
+  pointer-events: auto !important;
+  cursor: not-allowed !important;
+}
+</style>
+"""
+          js = r"""
+<script id="akbar-pause-script">
+/* AKBAR_PAUSE_CONTACT_APPOINTMENT_V2 */
+(function () {
+  "use strict";
+  const marker = "AKBAR_PAUSE_CONTACT_APPOINTMENT_V2";
+
+  function isPausedElement(el) {
+    if (!el || !(el instanceof Element)) return false;
+    const text = (el.innerText || el.textContent || "").trim().replace(/\s+/g, " ");
+    const href = (el.getAttribute("href") || "").toLowerCase();
+
+    /* Disable every WhatsApp destination, including wa.me links and
+       javascript handlers that may construct WhatsApp URLs. */
+    if (
+      href.includes("wa.me") ||
+      href.includes("whatsapp.com") ||
+      href.includes("api.whatsapp.com") ||
+      href.startsWith("whatsapp:")
+    ) return true;
+
+    /* Disable Appointment navigation/buttons without touching service cards. */
+    if (
+      href === "#appointment" ||
+      href === "#appointment-form" ||
+      text === "Book Appointment" ||
+      text === "Book Appointment →" ||
+      text === "Book Appointment ➜"
+    ) return true;
+
+    /* Disable Contact navigation only. Do not disable generic service text. */
+    if (
+      href === "#contact" ||
+      text === "Contact" ||
+      text === "Contact Support" ||
+      text === "Contact →" ||
+      text === "Contact ➜"
+    ) return true;
+
+    /* Phone contact is also paused so Contact has no action. */
+    if (href.startsWith("tel:")) return true;
+
+    return false;
+  }
+
+  function markAndBlock(root) {
+    const candidates = root.querySelectorAll
+      ? root.querySelectorAll("a, button, [role='button']")
+      : [];
+    candidates.forEach(function (el) {
+      if (isPausedElement(el)) {
+        el.classList.add("akbar-paused-control");
+        el.setAttribute("aria-disabled", "true");
+        el.setAttribute("data-akbar-paused", "true");
+      }
+    });
+  }
+
+  function blockEvent(event) {
+    let el = event.target instanceof Element ? event.target.closest("a, button, [role='button']") : null;
+    if (!el) return;
+
+    if (isPausedElement(el) || el.getAttribute("data-akbar-paused") === "true") {
+      event.preventDefault();
+      event.stopPropagation();
+      if (typeof event.stopImmediatePropagation === "function") {
+        event.stopImmediatePropagation();
+      }
+      return false;
+    }
+  }
+
+  function blockForm(event) {
+    const form = event.target;
+    if (!(form instanceof HTMLFormElement)) return;
+    const appointmentArea = form.closest("#appointment, #appointment-form, [id*='appointment'], [class*='appointment']");
+    const hasAppointmentFields =
+      form.querySelector("input[name*='name'], input[name*='phone'], input[type='date'], select");
+    if (appointmentArea || hasAppointmentFields) {
+      event.preventDefault();
+      event.stopPropagation();
+      if (typeof event.stopImmediatePropagation === "function") event.stopImmediatePropagation();
+      return false;
+    }
+  }
+
+  function init() {
+    markAndBlock(document);
+    document.addEventListener("click", blockEvent, true);
+    document.addEventListener("pointerup", blockEvent, true);
+    document.addEventListener("touchend", blockEvent, true);
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      let el = event.target instanceof Element ? event.target.closest("a, button, [role='button']") : null;
+      if (el && (isPausedElement(el) || el.getAttribute("data-akbar-paused") === "true")) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (typeof event.stopImmediatePropagation === "function") event.stopImmediatePropagation();
+      }
+    }, true);
+    document.addEventListener("submit", blockForm, true);
+
+    const observer = new MutationObserver(function () {
+      markAndBlock(document);
+    });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init, { once: true });
+  } else {
+    init();
+  }
+})();
+</script>
+"""
+          injection = "\n" + css + js + "\n" + marker + "\n"
+          if "</body>" not in html.lower():
+              raise SystemExit("index.html has no </body> tag; nothing changed.")
+          idx = html.lower().rfind("</body>")
+          html = html[:idx] + injection + html[idx:]
+          path.write_text(html, encoding="utf-8")
+          print("Pause code injected into index.html")
+          PY
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && echo "No changes to commit." || git commit -m "Pause contact appointment and WhatsApp actions"
+          git push
